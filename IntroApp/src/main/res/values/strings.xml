@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">IntroApp</string>
+    <string name="button_1">显式Intent</string>
+    <string name="button_2">隐式Intent</string>
+</resources>
