@@ -17,4 +17,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/button2"
         android:text="@string/button_2"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:text="隐式Intent2"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:text="隐式Intent3"/>
 </LinearLayout>

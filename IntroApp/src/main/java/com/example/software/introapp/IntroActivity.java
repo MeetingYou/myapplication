@@ -2,6 +2,7 @@ package com.example.software.introapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
@@ -14,6 +15,8 @@ public class IntroActivity extends Activity {
 
     private Button btn1;
     private Button btn2;
+    private Button btn3;
+    private Button btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,10 @@ public class IntroActivity extends Activity {
         btn1.setOnClickListener(new MyClickListener());
         btn2 = (Button)findViewById(R.id.button2);
         btn2.setOnClickListener(new MyClickListener());
+        btn3 = (Button)findViewById(R.id.button3);
+        btn3.setOnClickListener(new MyClickListener());
+        btn4 = (Button)findViewById(R.id.button4);
+        btn4.setOnClickListener(new MyClickListener());
     }
 
     private class MyClickListener implements View.OnClickListener {
@@ -40,6 +47,16 @@ public class IntroActivity extends Activity {
                     Toast.makeText(IntroActivity.this, "Hi Rowling.......", Toast.LENGTH_LONG).show();
                     Intent intent2 = new Intent("android.intent.action.introactivity.secondactivity");
                     startActivity(intent2);
+                    break;
+                case R.id.button3:
+                    Intent intent3 = new Intent(Intent.ACTION_VIEW);
+                    intent3.setData(Uri.parse("http://www.baidu.com?CSU"));
+                    startActivity(intent3);
+                    break;
+                case R.id.button4:
+                    Intent intent4 = new Intent(Intent.ACTION_DIAL);
+                    intent4.setData(Uri.parse("tel:10086"));
+                    startActivity(intent4);
                     break;
             }
         }
