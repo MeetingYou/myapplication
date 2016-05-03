@@ -34,6 +34,23 @@ public class IntroActivity extends Activity {
         btn4.setOnClickListener(new MyClickListener());
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case 1:
+                Log.d("FirstActivity", "case 1");
+                Log.d("FirstActivity", "resultCode"+resultCode);
+                if (resultCode == RESULT_OK) {
+                    Bundle bundle = data.getExtras();
+                    String msg = bundle.getString("data_return");
+                    Log.d("FirstActivity", msg);
+                    Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+                }
+                break;
+        }
+    }
+
     private class MyClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
@@ -41,7 +58,8 @@ public class IntroActivity extends Activity {
                 case R.id.button1:
                     Toast.makeText(IntroActivity.this, "Hi Rowling", Toast.LENGTH_LONG).show();
                     Intent intent1 = new Intent(IntroActivity.this, FirstActivity.class);
-                    startActivity(intent1);
+                    intent1.putExtra("name", "Luo Lin");
+                    startActivityForResult(intent1, 1);
                     break;
                 case R.id.button2:
                     Toast.makeText(IntroActivity.this, "Hi Rowling.......", Toast.LENGTH_LONG).show();
