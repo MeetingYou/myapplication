@@ -1,1 +1,1 @@
-include ':app', ':IntroApp'
+include ':app', ':IntroApp', ':UIWidgetTest'

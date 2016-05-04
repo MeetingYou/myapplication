@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/IntroApp" />
+            <option value="$PROJECT_DIR$/UIWidgetTest" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
@@ -17,6 +18,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/IntroApp" />
+            <option value="$PROJECT_DIR$/UIWidgetTest" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
