@@ -3,8 +3,11 @@ package com.example.uitest;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +21,8 @@ public class MainActivity extends Activity {
     private EditText editText;
     private ProgressBar progressBar;
     private Button alertButton;
+    private Button progressButton;
+    private Button secondButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,10 @@ public class MainActivity extends Activity {
         progressBar = (ProgressBar)findViewById(R.id.progress_bar);
         alertButton = (Button)findViewById(R.id.alert_button);
         alertButton.setOnClickListener(new MyOnclickListener());
+        progressButton = (Button)findViewById(R.id.progress_button);
+        progressButton.setOnClickListener(new MyOnclickListener());
+        secondButton = (Button)findViewById(R.id.second_button);
+        secondButton.setOnClickListener(new MyOnclickListener());
     }
 
     @Override
@@ -73,6 +82,21 @@ public class MainActivity extends Activity {
                         }
                     });
                     alertDialog.show();
+                    break;
+                case R.id.progress_button:
+                    ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+                    progressDialog.setTitle("Waiting");
+                    progressDialog.setMessage("Loading....");
+                    progressDialog.setCancelable(false);
+                    progressDialog.show();
+                    for (int i=0; i<10000; i++) {
+
+                    }
+                    progressDialog.dismiss();
+                    break;
+                case R.id.second_button:
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    startActivity(intent);
                     break;
             }
         }

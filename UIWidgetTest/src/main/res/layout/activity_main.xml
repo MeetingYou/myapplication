@@ -63,4 +63,18 @@
         android:layout_height="wrap_content"
         android:text="Alert" />
 
+    <Button
+        android:id="@+id/progress_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Progress" />
+
+    <Button
+        android:id="@+id/second_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="secondActivity"
+        android:textColor="#f00"
+        android:textAllCaps="false"/>
+
 </LinearLayout>
