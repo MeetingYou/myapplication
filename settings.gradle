@@ -1,1 +1,1 @@
-include ':app', ':IntroApp', ':UIWidgetTest'
+include ':app', ':IntroApp', ':UIWidgetTest', ':UICustomViews'
