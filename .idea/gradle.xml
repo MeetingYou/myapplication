@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/BroadcastTest" />
             <option value="$PROJECT_DIR$/IntroApp" />
             <option value="$PROJECT_DIR$/ListViewTest" />
             <option value="$PROJECT_DIR$/UIBestPractise" />
@@ -20,6 +21,7 @@
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/BroadcastTest" />
             <option value="$PROJECT_DIR$/IntroApp" />
             <option value="$PROJECT_DIR$/ListViewTest" />
             <option value="$PROJECT_DIR$/UIBestPractise" />
