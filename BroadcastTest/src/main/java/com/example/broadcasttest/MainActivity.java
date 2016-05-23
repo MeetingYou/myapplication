@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.send_button:
                     Intent intent = new Intent("android.intent.action.MY_BROADCAST");
-                    MainActivity.this.sendBroadcast(intent);
+                    //MainActivity.this.sendBroadcast(intent);
+                    MainActivity.this.sendOrderedBroadcast(intent, null);
                     break;
             }
         }
