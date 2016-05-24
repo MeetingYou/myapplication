@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.send_button:
                     Intent intent = new Intent("android.intent.action.MY_BROADCAST");
                     //MainActivity.this.sendBroadcast(intent);
+                    intent.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
                     MainActivity.this.sendOrderedBroadcast(intent, null);
                     break;
             }
