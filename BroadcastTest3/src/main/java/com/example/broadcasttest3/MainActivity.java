@@ -21,6 +21,8 @@ Local broadcast
 静态注册的广播，app不启动不一定可以收到广播，原因是所有的广播默认添加了Intent.FLAG_EXCLUDE_STOPPED_PACKAGES
 FLAG_INCLUDE_STOPPED_PACKAGES：包含已经停止的包（停止：即包所在的进程已经退出）
 FLAG_EXCLUDE_STOPPED_PACKAGES：不包含已经停止的包
+
+除了满足FLAG的条件，还要查看手机是否有其它 安全类的程序阻止 后台启动
  */
 
 
