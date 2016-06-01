@@ -1,10 +1,14 @@
 package com.orange.broadcastbestpractise;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.BoolRes;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,6 +20,9 @@ public class LoginActivity extends BaseActivity{
     private EditText mAccountEditText;
     private EditText mPasswordEditText;
     private Button mOkButton;
+    private CheckBox mRememberCheckBox;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     private final String LOG_TAG = "LoginActivity";
     @Override
@@ -26,6 +33,17 @@ public class LoginActivity extends BaseActivity{
         mAccountEditText = (EditText)findViewById(R.id.account_edit_text);
         mPasswordEditText = (EditText)findViewById(R.id.password_edit_text);
         mOkButton = (Button)findViewById(R.id.ok_button);
+        mRememberCheckBox = (CheckBox)findViewById(R.id.remember_checkbox);
+
+        mSharedPreferences = getSharedPreferences("account", MODE_PRIVATE);
+        Boolean isChecked = mSharedPreferences.getBoolean("remember_checked", false);
+        if (isChecked) {
+            String oldAccount = mSharedPreferences.getString("account", "");
+            if (!TextUtils.isEmpty(oldAccount)) {
+                mAccountEditText.setText(oldAccount);
+            }
+            mRememberCheckBox.setChecked(isChecked);
+        }
 
         mOkButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +52,16 @@ public class LoginActivity extends BaseActivity{
                 String password = mPasswordEditText.getText().toString();
                 if ("admin".equals(account) && "123321".equals(password)) {
                     Log.d(LOG_TAG, "Right");
+
+                    mEditor = mSharedPreferences.edit();
+                    if (mRememberCheckBox.isChecked()) {
+                        mEditor.putBoolean("remember_checked", true);
+                        mEditor.putString("account", account);
+                    } else {
+                        mEditor.clear();
+                    }
+                    mEditor.commit();
+
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
