@@ -2,7 +2,9 @@ package com.orange.filepersistancetest;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -23,7 +25,12 @@ public class MainActivity extends BaseActivity {
         mEditText = (EditText)findViewById(R.id.edit_text);
 
         String stored = load("text");
-        mEditText.setText(stored);
+        if (!TextUtils.isEmpty(stored)) {
+            mEditText.setText(stored);
+            mEditText.setSelection(stored.length());
+            Toast.makeText(this, "Process success", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override

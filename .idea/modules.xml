@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/IntroApp/IntroApp.iml" filepath="$PROJECT_DIR$/IntroApp/IntroApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/ListViewTest/ListViewTest.iml" filepath="$PROJECT_DIR$/ListViewTest/ListViewTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SharedPreferencesTest/SharedPreferencesTest.iml" filepath="$PROJECT_DIR$/SharedPreferencesTest/SharedPreferencesTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/UIBestPractise/UIBestPractise.iml" filepath="$PROJECT_DIR$/UIBestPractise/UIBestPractise.iml" />
       <module fileurl="file://$PROJECT_DIR$/UICustomViews/UICustomViews.iml" filepath="$PROJECT_DIR$/UICustomViews/UICustomViews.iml" />
       <module fileurl="file://$PROJECT_DIR$/UIWidgetTest/UIWidgetTest.iml" filepath="$PROJECT_DIR$/UIWidgetTest/UIWidgetTest.iml" />
