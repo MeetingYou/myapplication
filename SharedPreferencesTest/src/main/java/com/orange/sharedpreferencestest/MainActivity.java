@@ -7,16 +7,20 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
     private Button mSaveButton;
+    private Button mRestoreButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mSaveButton = (Button)findViewById(R.id.save_button);
+        mRestoreButton = (Button)findViewById(R.id.restore_button);
+
         mSaveButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -38,6 +42,16 @@ public class MainActivity extends Activity {
             }
         });
 
+        mRestoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedPreferences = getSharedPreferences("age", MODE_PRIVATE);
+                int age1 = sharedPreferences.getInt("ZhangSan", 0);
+                int age2 = sharedPreferences.getInt("LiSi", 0);
+                int age3 = sharedPreferences.getInt("Rowling", 0);
 
+                Toast.makeText(MainActivity.this, "Rowling is " + age3 + " years old", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
